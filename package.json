@@ -1,0 +1,36 @@
+{
+  "name": "eastward",
+  "version": "1.0.0",
+  "description": "traviling company",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shohruh-xasanov/eastward.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shohruh-xasanov/eastward/issues"
+  },
+  "homepage": "https://github.com/shohruh-xasanov/eastward#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "md5": "^2.3.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.4",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.12",
+    "sharp": "^0.28.3"
+  }
+}
