@@ -6,6 +6,7 @@
             <!-- cart-area -->
             <div class="cart-area pt-100 pb-100">
                 <div class="container">
+                  <h4 class="m-3" style="font-weight: 700">Murojaatlar ro'yhati</h4> <br>
                     <div class="row">
                         <div class="col-12">
                             <div class="cart-wrapper">
@@ -13,64 +14,46 @@
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th class="product-thumbnail">Name</th>
+                                                <th  class="product-thumbnail">Name</th>
                                                 <th class="product-name">Email</th>
-                                                <th class="product-price">Message</th>
+                                                <th class="product-name">Xabarlar</th>
+                                                <th  class="product-thumbnail">Vaqti</th>
+                                                <th style="width: 18%;" class="product-thumbnail">Parametr</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                          <% for(item of contact) {%>
                                             <tr>
                                                 
                                                 <td class="product-name">
-                                                    <h4><a href="shop-details.html">Travelling Bags</a></h4>
+                                                    <h4><%= item.name%></h4>
                                                 </td>  
                                                 <td class="product-name">
-                                                    <h4><a href="shop-details.html">afdasfdsa Bags</a></h4>
+                                                    <h4><%= item.email%></h4>
                                                 </td>
-                                                <td class="product-price">$ 37.00</td>
-                                                <td class="product-quantity">
-                                                    <div class="cart-plus-minus">
-                                                        <div class="continue-shopping">
-                                                            <a href="shop.html" class="btn">Delete</a>
-                                                        </div>
-                                                    </div>
+                                                <td class="product-name">
+                                                    <h4><%= item.message%></h4>
                                                 </td>
                                                 <td>
-                                                    <div class="cart-coupon">
-                                                        <form action="#">
-                                                            <button class="btn">Update</button>
-                                                        </form>
-                                                    </div>
+                                                  <%= moment(item.createdAt).format("DD-MM-YYYY") %>
                                                 </td>
+                                                <td style="
+                                                display: flex;
+                                                flex-direction: row;
+                                                justify-content: space-around;
+                                                align-items: center;
+                                              ">
+                                                <form method="POST" class="hidden-r" action="<%=`/contact/${item._id}?_method=DELETE`%>">
+                                                  <button type="submit" class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                  </button>
+                                                </form>
+                                              </td>
                                             </tr>
-                                            <tr>
-                                                
-                                                <td class="product-name">
-                                                    <h4><a href="shop-details.html">Travelling Bags</a></h4>
-                                                </td>  
-                                                <td class="product-name">
-                                                    <h4><a href="shop-details.html">asdffsad Bags</a></h4>
-                                                </td>
-                                                <td class="product-price">$ 37.00</td>
-                                                <td class="product-quantity">
-                                                    <div class="cart-plus-minus">
-                                                        <div class="continue-shopping">
-                                                            <a href="shop.html" class="btn">Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="cart-coupon">
-                                                        <form action="#">
-                                                            <button class="btn">Update</button>
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <%}%>
                                         </tbody>
                                     </table>
                                 </div>
-                             
                             </div>
                         </div>
                     </div>

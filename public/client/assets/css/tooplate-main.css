@@ -297,7 +297,8 @@ nav a::before {
   background-position: fixed;
 }
 .slides .slide:nth-child(1) {
-
+  background-image: url(../images/full-bg.jpg);
+  background-position: fixed;
 }
 .slides .slide:nth-child(2) {
   background-image: url(../images/about-bg.jpg);

@@ -13,5 +13,10 @@ exports.contactCreate = async (req,res,next)=>{
 
 exports.getAll = async (req,res,next)=>{
     const contact = await Contact.find()
-    res.send(contact)
+    res.render('admin/contact', {layout:'./admin_layout',contact})
+}
+
+exports.elementDelete = async (req,res,next)=>{
+    await About.findByIdAndDelete(req.params.id)
+    res.redirect('/contact/all')
 }

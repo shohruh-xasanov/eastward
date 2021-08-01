@@ -25,33 +25,20 @@ app.set('views', './views')
 app.use(layout);
 
 app.use(express.static('public'))
+app.use('/public/uploads',express.static('public/uploads'))
 app.use(express.static(path.join(__dirname + "/public/client")))
-app.use(express.static(path.join(__dirname + "/public")))
+app.use(express.static(path.join(__dirname + "/public/admin")))
 
 app.use('/about', require('./routes/aboutRouter'))
 app.use('/user', require('./routes/userRouter'))
 app.use('/contact', require('./routes/contactRouters'))
 app.use('/poster', require('./routes/posterRouter'))
+app.use('/', require('./routes/mainRouter'))
 
 app.listen(PORT, ()=>{
     console.log('Server is running to localhost')
 })
 
-app.get('/', (req,res)=>{
-    res.render('client/index', {layout:false})
-})
-app.get('/admin/poster', (req,res)=>{
-    res.render('admin/cart', {layout:'./admin_layout'})
-})
-app.get('/admin', (req,res)=>{
-    res.render('admin/user', {layout:'./admin_layout'})
-})
-app.get('/admin/contact', (req,res)=>{
-    res.render('admin/contact', {layout:'./admin_layout'})
-})
-app.get('/admin/about', (req,res)=>{
-    res.render('admin/about', {layout:'./admin_layout'})
-})
-app.get('/admin/update', (req,res)=>{
-    res.render('admin/update', {layout:'./admin_layout'})
+app.get('/home', (req,res)=>{
+    res.render('client/image', {layout:false})
 })
