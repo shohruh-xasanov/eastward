@@ -39,6 +39,6 @@ app.listen(PORT, ()=>{
     console.log('Server is running to localhost')
 })
 
-app.get('/home', (req,res)=>{
-    res.render('client/image', {layout:false})
+app.get('/admin/login', (req,res)=>{
+    res.render('admin/login', {layout:false})
 })
